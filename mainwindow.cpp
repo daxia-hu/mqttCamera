@@ -61,6 +61,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    this->setWindowTitle("网络摄像机");
     m_client = new QMqttClient(this);
     m_client->setHostname("mq.tongxinmao.com");
     m_client->setPort(18830);
