@@ -68,6 +68,7 @@ MainWindow::MainWindow(QWidget *parent) :
     camera = new QCamera(this);
     cameraViewFinder = new QCameraViewfinder(this);
     cameraImageCapture = new QCameraImageCapture(camera);
+    cameraImageCapture->setCaptureDestination(QCameraImageCapture::CaptureToBuffer);
     ui->verticalLayout_2->addWidget(cameraViewFinder);
     camera->setViewfinder(cameraViewFinder);
     connect(cameraImageCapture,SIGNAL(imageCaptured(int,QImage)),this,SLOT(onImageCaptured(int,QImage)));
